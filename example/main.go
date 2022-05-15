@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"sort"
 	"time"
 
@@ -9,8 +10,13 @@ import (
 )
 
 func main() {
+	unsorted := make([]int, 10)
+
+	for i := 0; i < len(unsorted); i++ {
+		unsorted[i] = rand.Intn(100)
+	}
+
 	start := time.Now()
-	unsorted := []int{12, 123412, 1323, 12341241234, 123421341232, 124134, 12341234, 12341234}
 	sorted := schedSort.SortInts(unsorted)
 	end := time.Now()
 
